@@ -44,6 +44,9 @@ nmap <buffer> q <Plug>(showtime-quit)
 nmap <buffer> s <Plug>(showtime-cursor)
 nmap <buffer> <C-l> <Plug>(showtime-redraw)
 
+nnoremap <silent> <buffer> e <C-e>
+nnoremap <silent> <buffer> y <C-y>
+
 command! -buffer ShowtimeEnd call showtime#action('quit')
 
 let &cpo = s:save_cpo
