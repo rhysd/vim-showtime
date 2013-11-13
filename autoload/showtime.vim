@@ -38,7 +38,7 @@ function! s:make_buffer(data, page)
   let b:showtime = {}
   let b:showtime.data = a:data
   let b:showtime.saved_state = s:save_state()
-  set laststatus=0 showtabline=0 noshowcmd
+  set laststatus=0 showtabline=0 noshowcmd noruler
   if has_key(a:data, 'font')
     let &guifont = a:data.font
   endif
@@ -104,6 +104,7 @@ function! s:save_state()
   \   'showtabline', 'laststatus',
   \   'showcmd', 'titlestring',
   \   'guifont', 'lines', 'columns',
+  \   'ruler',
   \ ]
     let options[option] = eval('&' . option)
   endfor
